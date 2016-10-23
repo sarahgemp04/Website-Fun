@@ -1,0 +1,857 @@
+
+/**
+    AUTHOR: Sarah Gemperle
+    DATE-LAST-EDITED: Aug 17, 2016
+
+    CSS3 Styles for my online Resume. Will continue changing in the future :)
+**/
+
+/*GLOBAL STYLES*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font: 15px "Roboto", sans-serif; 
+    margin: 0px;
+    padding: 0px;
+    overflow: none;
+}
+
+p {
+    color: rgb(110,110,110);
+    line-height: 1.6em;    
+}
+
+.page-even h1 {
+    font-family: "Ubuntu";
+    font-size: 3em;
+    color: rgb(116,167,245);
+}
+
+section {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-shadow: 1px 1px 0.5px rgba(110,110,110,0.9);
+}
+
+.page-odd h1 {
+    font-family: "Ubuntu";
+    font-size: 3em;
+    color: rgba(252,252,248,0.9);
+}
+
+h2 {
+    font-family: "Ubuntu";
+    font-size: 1.5em;
+    color: rgba(110,110,110,0.9);
+    margin: 2em 0 2em 0;
+}
+
+.page-even {
+    -webkit-box-shadow: 0px -3px 12px rgba(110,110,110,0.4);
+    -moz-box-shadow: 0px -3px 12px rgba(110,110,110,0.4);
+    box-shadow: 0px -3px 12px rgba(110,110,110,0.4);
+    background: rgb(252,252,248);
+    margin: 0;
+    padding: 3em 3em;
+    text-align: center;
+    position: static;
+    overflow: none;
+}
+
+.page-odd {
+    -webkit-box-shadow: 0px -3px 12px rgba(110,110,110,0.4);
+    -moz-box-shadow: 0px -3px 12px rgba(110,110,110,0.4);
+    box-shadow: 0px -3px 12px rgba(110,110,110,0.4);
+    margin: 0 0 0 0;
+    padding: 3em 3em;
+    text-align: center;
+    position: static;
+    background: rgba(116,167,245, 0.6);
+    overflow: none;
+}
+
+/*Used for link purposes*/
+
+#topAbout, #topSkills, #topE {
+margin: 0;
+padding: 0;
+position: static;
+}
+
+/*HOMEPAGE STYLING*/
+
+#home {
+    font-size: 0.8em; 
+    background: url("./Img/background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: center;
+    opacity: 0.7;
+}
+
+
+#home span {
+    padding-top: 15px 15px 15px 15px;
+    font-family: "Ubuntu";
+    font-size: 3.5em;
+    font-weight: bold;
+    color: rgb(252,252,252);
+}
+
+#home p {
+    font-size: 1.7em;
+    color: rgba(116,167,245,1);
+    padding-bottom: 7px;
+}
+
+.homeTitle {
+    font-size: 1em;
+    display: inline-block;
+    position: relative;
+    top: 20%;
+    margin: 0 auto;
+    padding: 15px 15px;
+    transition: text-shadow 0.5s;
+    -webkit-transition: text-shadow 0.5s;
+    -webkit-box-shadow: 3px 3px 3px rgba(100,100,100,1);
+    -moz-box-shadow: 3px 3px 3px rgba(100,100,100,1);
+    box-shadow: 3px 3px 3px rgba(100,100,100,1);
+    border: solid rgba(100,103,104,0.6) 2px;
+    background: rgba(100,103,104,0.5);
+    border-radius: 20px;
+}
+
+
+.homeTitle:hover {
+    text-shadow: 1px 2px 2px rgba(252,252,248,0.8);
+}
+
+/*Design for animated arrow. Use container to hold arrow*/
+.arrwContainer {
+    width: 200px;
+    height: 75px;
+    background: rgba(100,103,104,0);
+    position: absolute;
+    text-align: center;
+    left: calc(50% - 100px);
+    right: calc(50% - 100px);
+    bottom: 0;
+}
+
+/*Animation for arrow. Adust border width and adjust positioning to appear 
+bouncing*/
+@keyframes arrow {
+    0% {}
+    50% {border-left, border-bottom: solid rgb(252,252,248) 5px; width: 55px; height: 55px; top: -10px;}
+    100% {border-left, border-bottom: solid rgb(252,252,248) 3px; width: 50px; height: 50px; top: 0px;}
+}
+
+@-webkit-keyframes arrow {
+    0% {}
+    50% {border-left, border-bottom: solid rgb(252,252,248) 5px; width: 55px; height: 55px; top: -20px;}
+    100% {border-left, border-bottom: solid rgb(252,252,248) 3px; width: 50px; height: 50px; top: 0px;}
+}
+
+/*the arrow link. Simply border bottom and border left rotated 45 degrees 
+  counter-clockwise*/
+.arrow {
+    width: 50px;
+    height: 50px;
+    border-left: solid rgb(256,256,252) 3px;
+    border-bottom: solid rgb(256,256,252) 3px;
+    margin: 0 auto;
+    position: relative;
+    transform: rotate(-45deg);
+    animation-name: arrow;
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.5s;
+    -webkit-animation-name: arrow;
+    -webkit-animation-duration: 1.8s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-delay: 0.5s;
+}
+
+/*change color of arrow with hover*/
+.arrow:hover {
+    border-bottom: solid rgba(252,252,248,0.5);
+    border-left: solid rgba(252,252,248,0.5);
+}
+
+/*NAVIGATION STYLING. (See sticky.js for javascript function). stays fixed 
+starting second page. Use flexbox for responsive layout.*/
+
+.nav {
+    position: relative;
+    width: 100%;
+    z-index: 5; 
+    margin: 0;
+    background: rgba(100,103,104,0.8);
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap; 
+    align-items: flex-end;
+    justify-content: flex-start;
+    -webkit-align-items: flex-end;
+    -webkit-box-shadow: 2px 2px 5px rgba(100,103,104,0.5);
+    -moz-box-shadow: 2px 2px 5px rgba(100,103,104,0.5);
+    box-shadow: 2px 2px 5px rgba(100,103,104,0.5);
+}
+
+/*Mobile phone view/small device view. See javascript for display details*/
+.navDrop {
+    margin: 0;
+    font-family: "Ubuntu";
+    font-weight: medium;
+    font-size: 1.1em;
+    align-self: flex-start;
+    display: none;
+}
+
+/*List links for dropdown menu during small device view*/
+#dropTabs {
+    padding-left: 0;
+    display: block;
+}
+
+#dropTabs li {
+display: block;
+}
+
+/*nav font*/
+.nav li {
+    margin: 0;
+    font-family: "Ubuntu";
+    font-size: 1.1em;
+    list-style: none;
+}
+
+.nav li a {
+    list-style: none;
+    margin: 0;
+    padding: 1.2em;
+    text-decoration: none;
+    display: block;
+    color: rgba(252,252,248,0.8);
+    -webkit-transition: background 0.3s;
+    transition: background 0.3s;
+}
+
+.nav a:hover {
+    background: rgba(152,152,248,1);
+}
+
+/*Make name appear on right*/
+.nav li:last-child {
+    margin-left: auto;
+    font-weight: normal;
+}
+
+/*ABOUT STYLING*/
+
+/*Holds profile picture and content box. Aligned in column order; profile on top
+*/
+.AboutContainer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: column wrap; 
+    align-items: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+}
+
+#profile {    
+    border: solid rgba(116,167,245,0.6) 15px;
+    border-radius: 50%;
+    -webkit-transition: transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-box-shadow: 2px 2px 3px rgba(110,110,110,0.7);
+    -moz-box-shadow: 2px 2px 3px rgba(110,110,110,0.7);
+    box-shadow: 2px 2px 3px rgba(110,110,110,0.7);
+}
+
+/* make slight rotation on hover.*/
+#profile:hover {
+    transform: rotate(-15deg);
+}
+
+/* holds about information. */
+.content {
+    text-align: left;
+    max-width: 650px;
+    padding: 1em 2em 0.7em 2em;
+    margin: 1em 0 2em 0;
+    -webkit-transition: box-shadow 0.4s
+}
+
+.aboutC {
+    -webkit-box-shadow: 3px 3px 8px rgba(110,110,110,0.4), -2px 0 6px rgba(110,110,110,0.1);
+    -moz-box-shadow: 3px 3px 8px rgba(110,110,110,0.4), -2px 0 6px rgba(110,110,110,0.1);
+    box-shadow: 3px 3px 8px rgba(110,110,110,0.4), -2px 0 6px rgba(110,110,110,0.1);
+}
+
+/*Adjust shadow to make appear as if gaining elevation above screen.*/
+.content:hover {
+    -moz-box-shadow: 8px 8px 12px rgba(110,110,110,0.5), -6px 0 10px rgba(110,110,110,0.2);
+    -webkit-box-shadow: 8px 8px 12px rgba(110,110,110,0.5), -6px 0 10px rgba(110,110,110,0.2);
+    box-shadow: 8px 8px 12px rgba(110,110,110,0.5), -6px 0 10px rgba(110,110,110,0.2);
+}
+
+
+/*SKILLS STYLING*/
+/*Contains one flexbox that contains 3 elements: coding languages, softwares, and 
+soft skills*/
+
+.skillsContainer {
+    background: rgb(252,252,248);
+    margin: 2.4em 2.4em;
+    -webkit-box-shadow: inset 2px 2px 5px rgba(110,110,110,0.5), inset -1px 0 5px rgba(110,110,110,0.4);
+    -moz-box-shadow: inset 2px 2px 5px rgba(110,110,110,0.5), inset -1px 0 5px rgba(110,110,110,0.4);
+    box-shadow: inset 2px 2px 5px rgba(110,110,110,0.5), inset -1px 0 5px rgba(110,110,110,0.4);
+    text-align: left;
+}
+
+.skills {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap; 
+    align-items: flex-start;
+    justify-content: space-around;
+    -webkit-align-items: flex-start;
+    -webkit-justify-content: space-around;
+    list-style: none;
+    margin: 0;
+}
+
+/*The "hover over skills" styling*/
+.page-odd h1 span {
+    font-size: 0.4em;
+    color: rgba(242,242,238,0.8);
+    text-shadow: none;
+}
+
+
+.skills h2 span {
+    font-size: 0.6em;
+}
+    
+/* class for containers that hold list items.*/    
+.dropdown {
+    text-align: left;
+    padding: 1.3em 0 2em 0;    
+    font-size: 14px;
+}
+
+
+.dropdown li {
+    color: rgb(100,100,100);
+    list-style: none;
+    padding: 8px 2px 8px 2px;
+    -webkit-transition: color 0.7s, font-weight 0.7s;
+    transition: color 0.7s, font-weight 0.7s;
+}
+
+.dropdown li:hover {
+    font-weight: bold;
+    color: rgba(116,167,245,0.9);
+}
+
+
+/*target star elements. use color to make them appear on hover. 
+set initial color to completely transparent.*/
+.dropdown li span {
+    float: right;
+    font-size: 13px;
+    color: rgba(116,167,245,0.0);
+    padding: 0 0 0 1.5em; 
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+}
+
+/* transition for stars. set color to non-transparent on hover.*/
+.dropdown li:hover span {
+    color: rgba(116,167,245,0.9);
+}
+
+.space-filler {
+    visibility: hidden;
+}
+
+
+
+/*EDUCATION AND EXPERIENCE STYLING*/
+
+
+/*GPA*/
+aside {
+ color: rgba(90,90,90,1.0);
+ font: 20px;
+ line-height: 2em;
+ text-align: left;
+ padding: 3em 3em 3em 3em;
+ display: block;
+ float: left;
+ z-index: 0;
+ background: rgba(116,167,245,0.5);
+ border: solid rgba(110,110,110,0.4) 3px;
+ border-radius: 23px 10px 23px 10px;
+ margin: 1em 0 0 0;
+ align-self: flex-start;
+}
+
+/*Contains aside, and 3 unordered lists flexbox container.*/
+#EContainer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: column wrap; 
+    align-items: flex-start;
+    justify-content: flex-end;
+    -webkit-align-items: flex-start;
+    -webkit-justify-content: flex-end;
+    padding: 0 2em 2em 2em;
+    margin: 0;
+}
+
+/*Contains the 1 flexbox containing first ul and picture along with other 2 
+uls. Content aligned flex end to make pattern.*/
+.EduExp {
+    font-size: 14px;
+    list-style: none;
+    margin: -10em 0 0 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: column wrap; 
+    align-items: flex-end;
+    justify-content: flex-end;
+    -webkit-align-items: flex-end;
+    -webkit-justify-content: flex-end;
+}
+
+/*Projects and Courses. align flex-end*/
+
+.Wtype2 {
+    align-self: flex-start;
+}
+
+/*List styling*/
+.EduExp ul {
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.EduExp li h2 {
+    margin: 0.6em 0 0.6em 0;
+    text-align: left;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.EduExp li ul {
+    color: rgba(105,105,105,0.9);
+    line-height: 1.8;
+}
+
+#Gui {
+    margin-left: 4em;
+    padding: 7px;
+    border: solid rgba(110,110,110,0.8) 2px;
+    background: rgba(110,110,110,0.1);
+    border-radius: 4px;
+}
+
+/*Flexbox containing projects and picture*/
+.projectDiv {
+    align-self: flex-start;
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    -webkit-align-items: center;
+    -webkit-justify-content: space-around;
+}
+
+/*FOOTER*/
+
+#foot {
+    height: 300px;
+    background: url("./Img/footer.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0 -3em -3em -3em;
+    -moz-box-shadow: -2px 0px 9px rgba(110,110,110,0.6);
+    -webkit-box-shadow: -2px 0px 9px rgba(110,110,110,0.6);
+    box-shadow: -2px 0px 9px rgba(110,110,110,0.6);
+    padding: 1em;
+    text-align: center;
+    font: 1em "Roboto", sans-serif; 
+    color: rgba(110,110,110,0.8);
+    display: block;
+}
+
+.social {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    margin: 1em;
+}
+
+#foot span {
+   font-size: 1.0em; 
+   line-height: 1em;
+   padding: 0 1em 0 1em;
+   display: inline-block;
+   border-bottom: solid rgba(256,256,256,0.9) 2px;
+   -webkit-box-shadow: 0 2px 2px 0 rgba(256,256,0.5);
+   box-shadow: 0 2px 2px rgba(256,256,0.5);
+
+   margin-bottom: 0.1em;
+}
+
+/*RESPONSIVE STYLING: 
+  1150px, 750px, 450px
+*/
+@media (max-width: 1150px) {
+.page-even, .page-odd {
+    margin: 0;
+    padding: 2em 2em 2em 2em;
+}
+
+.page-odd {
+    background: rgb(116,167,245);
+}
+
+.skillsContainer {
+    margin: 2.4em 5em 2.4em 5em;
+}
+
+/*GPA*/
+aside {
+    align-self: center;
+    font: 20px;
+    line-height: 2em;
+    padding: 1em 7em 1em 7em;
+    margin: -1.5em 0 0.8em 2em;
+}
+
+/*Contains aside, and 3 unordered lists flexbox container.*/
+#EContainer {
+    flex-flow: column wrap; 
+    align-items: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    padding: 2em;
+}
+
+/*Contains the 1 flexbox containing first ul and picture along with other 2 
+uls. Content aligned flex end to make pattern.*/
+.EduExp {
+    flex-flow: column wrap; 
+    margin: -1em 0 0 0;
+    align-items: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+}
+
+/*Projects and Courses. align flex-end*/
+.Wtype1 {
+    max-width: 600px;
+    margin: 0.5em 0 0 0;
+    padding: 1em 1em 1em 1em;
+    align-self: center;
+}
+
+.Wtype2 {
+    max-width: 600px;
+    margin: 0.5em 0 0 0;
+    padding: 1em 1em 1em 1em;
+    align-self: center;
+}
+
+#Gui {
+    margin: 0;
+    padding: 7px;
+    border: solid rgba(110,110,110,0.8) 2px;
+    background: rgba(110,110,110,0.1);
+    border-radius: 4px;
+    order: 2;
+}
+
+/*Flexbox containing projects and picture*/
+.projectDiv {
+    align-self: center;
+    margin: 1em 0 0.5em 0;
+    padding: 0;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+}
+}/*end 1150px media query*/
+
+/*Adjust navigation to a dropdown menu rater than horizontal links to 
+  sections.
+  Change SKills to column flexbox and education/experience justify content to 
+  center.
+*/
+@media (max-width: 750px) {
+   
+.homeTitle {
+    font-size: 0.8em;
+    padding: 0.7em 0.7em; 
+}
+
+#home span {
+    font-size: 2.5em;
+}
+
+#home p {
+    font-size: 1.4em;
+}
+
+#aDrop {
+    text-decoration: none;
+    font-family: "Ubuntu";
+    display: inline-block;
+    text-align: left;
+}
+
+.navDrop {
+    margin: 0;
+    display: inline-block;
+    text-align: left;
+    align-self: flex-start;
+}
+
+.dropContainer {
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+.dropTabs {
+    text-align: left;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    -webkit-align-items: flex-start;
+    -webkit-justify-content: flex-start;
+}
+
+.dropTabs li {
+    font-size: 0.6em;
+    padding: 0.5em 0.5em;
+}
+
+.nav li:last-child {
+    display: none;
+}
+
+/*nav font*/
+.tab {
+    display: none;
+    margin: 0;
+    font-family: "Ubuntu";
+    font-weight: medium;
+    font-size: 25px;
+}
+
+body {
+    font: 14px "Roboto", sans-serif; 
+}
+
+.page-even {
+    margin: 0;
+    padding: 0.5em 0.5em;
+}
+
+.page-odd {
+    margin: 0 0 0 0;
+    padding: 1em 1em 1em 1em;
+}
+
+/*The "hover over skills" styling*/
+.page-odd h1 span {
+    display: none;
+}
+
+.skillsContainer {
+    background: rgb(252,252,248);
+    padding: 0;
+    margin: 1.5em 1.5em;
+    box-shadow: inset 5px 5px 10px rgba(110,110,110,0.5), inset -3px 0 10px rgba(110,110,110,0.4);
+    text-align: left;
+}
+
+.skills {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: column wrap; 
+    align-items: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    list-style: none;
+    margin: 0;
+}
+.dropdown li span {
+    float: right;
+    color: rgba(116,167,245,0.9);
+    padding: 0 0 0 1em; 
+    -webkit-transition: color 0.3s, font 0.3s;
+    transition: color 0.3s, font 0.3s;
+}
+
+.skills h2 span {
+    font-size: 0.6em;
+    padding: 0;
+    margin: 0;
+}
+
+.space-filler {
+    display: none;
+}
+    
+.dropdown li {
+    line-height: 1.2em;
+    margin: 0 0 0 -2em;
+    color: rgb(100,100,100);
+    list-style: none;
+    padding: 8px 0 8px 0;
+}
+aside {
+    align-self: center;
+    font: 20px;
+    line-height: 2em;
+    padding: 1em 2em 1em 2em;
+    display: block;
+    z-index: 0;
+    margin: -1.5em 0 0 0;
+}
+
+.Wtype1 {
+    max-width: 400px;
+    min-width: 200px;
+    margin: 1em 0em 0em 1em;
+    padding: 1em 1em 1em 1em;
+}
+
+.Wtype2 {
+    max-width: 400px;
+    min-width: 200px;
+    margin: 1em 0em 0em 1em;
+    padding: 1em 1em 1em 1em;
+    align-self: center;
+}
+
+#foot {
+    margin: 0 -1.2em 0 -1.2em;
+}
+}/*end 750px media query*/
+
+/*
+Mainly for mobile use. Adjust font size, and page padding/margins.*/
+@media (max-width: 450px) {
+body {
+    font: 13px "Roboto", sans-serif; 
+}
+
+#home {
+    font-size: 1em;
+    -webkit-background-size: auto 100%;
+    -moz-background-size: auto 100%;
+    -o-background-size: auto 100%;
+    background-size: auto 100%;
+}
+
+.page-odd {
+    padding: 0.5em 0.5em;
+}
+
+aside {
+    font: 20px;
+    line-height: 2em;
+    padding: 1em 1em 1em 1em;
+    display: block;
+    margin: -1.5em 0 0 0;
+}
+
+.Wtype1 {
+    max-width: 300px;
+    min-width: 100px;
+    margin: 1em 0 1em 0;
+    padding: 0;
+}
+
+.Wtype2 {
+    max-width: 300px;
+    min-width: 100px;
+    margin: 1em 0 1em 0;
+    padding: 0;
+}
+
+#EContainer {
+    padding: 0.1em;
+    margin: 0;
+}
+
+.content:hover {
+    box-shadow: 0px 0px 0px rgba(0,0,0,0);
+}
+/*End 450px media query
+}
+

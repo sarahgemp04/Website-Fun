@@ -1,0 +1,167 @@
+
+<!--
+    AUTHOR: Sarah Gemperle
+    DATE-LAST-EDITED: Aug 17, 2016
+
+    Main HTML document for online resume. Shows basic layout and setup.
+--!>
+
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <title>Sarah Gemperle</title>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="social.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+      <script src="easing.js"</script>
+      <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+      <script src="script.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet">
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,700italic|Ubuntu:400,700,700italic' rel='stylesheet' type='text/css'>
+      <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/
+            trunk/html5.js"></script>
+      <![endif]-->
+   </head>
+      <body>
+      <main>
+         <section id="home">
+            <div class="homeTitle">
+             <span>Sarah Gemperle</span> <p>UCSD Undergrad</p>
+            </div>
+            <div class="arrwContainer">
+              <a href="#topAbout">
+                <div class="arrow"></div>
+              </a>
+            </div>
+         </section>
+                <ul class="nav">
+                    <li id="#Drop" class="navDrop"><a href="#Drop" id="aDrop">&#9776;</a>
+                    <div class="dropContainer">
+                    <ul id="dropTabs">
+                        <li><a href="#topAbout">About</a></li>
+                        <li><a href="#topSkills">Skills | Tools</a></li>
+                        <li><a href="#more">Education | Experience</a></li>
+                        <li><a href="#home">SG</a></li>
+                        <li></li>
+                    </ul>
+                    </div>
+                    </li>
+
+                    <li class="tab"><a href="#topAbout">About</a></li>                                                               <li class="tab"><a href="#topSkills">Skills | Tools</a></li>
+                    <li class="tab"><a href="#topE">Education | Experience</a></li>
+                    <li class"tab"><a href="#home">Sarah Gemperle</a></li>
+                   </ul>
+            <div id="topAbout"></div>
+            <div class="page-even">
+              <section id="About">
+                <h1>About</h1>
+                <section class="AboutContainer">
+                <div class="profDeets">
+                <img id=profile src="./Img/IMG_3622.jpg" alt="Sarah Gemperle" />
+                <section class="content aboutC">
+                <p> Hi, my name is Sarah Gemperle!  I am a
+                current undergraduate at the <b>University of California, San Diego</b> studying
+                <b>Mathematics-Computer Science.</b> I am enrolled in my second year at UCSD, and am actively searching for a tech-related internship for this upcoming summer.</br></br>Though  my priority is being a student, my life outside of the library includes being involved in Greek Life on campus, practicing leadership in clubs on campus, sharpening programming skills, running/adventuring, and of course, given UCSD's location, heading to the beach when classes don't fill my time.                </section>
+                </section>
+              </section>
+            </div>
+            <div id="topSkills"></div>
+            <div class="page-odd">
+                    <h1>Skills<br><span><i>//Hover over skills to see where I am at//</i></span></h1>
+                    <section class="skillsContainer">
+                        <ul class="skills">
+                        <li class="skillType"><h2>Programming<br><span><i>Completed projects in...</i></span></h2>
+                            <ul class="dropdown">
+                                <li>Java<span>★★★★★</span></li>
+                                    <li>C <span>★★★★&#9734;</span></li>
+                                <li>HTML/HTML5<span>★★★★&#9734;</span></li>
+                                <li>CSS<span>★★★★&#9734;</span></li>
+                                <li>JavaScript<span>★★★&#9734;&#9734;</span></li>
+                                <li>Python<span>★★★&#9734;&#9734;</span></li>
+                                <li>PHP<span>★★&#9734;&#9734;&#9734;</li>
+                                <li>Shell Scripting<span>★★&#9734;&#9734;&#9734;</span></li>
+                            </ul>
+                        </li>
+                        <li class="skillType"><h2>Tools and Software<br><span><i>Comfortable utilizing...</i></span></h2>
+                            <ul class="dropdown">
+                                <li>Vim/GVim<span>★★★★★</span></li>
+                                <li>Eclipse<span>★★★★★</span></li>
+                                <li>GDB/JDB/Valgrind<span>★★★★&#9734;</span></li>
+                                <li>UNIX Command Line<span>★★★★&#9734;</span></li>
+                                <li>MATLAB<span>★★★★&#9734;</span></li>
+                                <li>Unit testing<span>★★★★&#9734;</span></li>
+                                <li>Wordpress<span>★★★★&#9734;</span></li>
+                                <li>Git Version Control<span>★★★&#9734;&#9734;</span></li>
+                            </ul>
+                        </li>
+                        <li class="skillType"><h2>Soft Skills<br><span class="space-filler">hi</span></h2>
+                            <ul class="dropdown">
+                                <li>Creativity</li>
+                                <li>Communication | Written and Oral</li>
+                                <li>Memorization, quick-learning</li>
+                                <li>Patience, Focus, and Determination</li>
+                                <li>Open-minded</li>
+                            </ul>
+                        </li>
+                        </ul>
+                        
+                    </section>
+                    <p id="more"><i>And more to come...</i></p>
+            </div>
+            <div id="topE"></div>
+            <div id="lastP" class="page-even">
+                <h1>Education and Experience</h1>
+                    <section id="EContainer">
+                    <aside><b>UCSD:</b> Sept 2015 - June 2019<br><b>Major GPA:</b> 3.8<br><b>Cum GPA:</b> 3.724</aside>
+                    <ul class="EduExp">
+                    <li class="Wtype1 content"><h2>Education</h2>
+                        <ul>
+                            <li><b>University of California, San Diego</b><br><span><i>Sept 2015 - Jun 2019</i></span><br>Current Second Year Undergraduate | <i>Provost Honors Student</i></li> | Pi Beta Phi-Academics Committee-Active member | She's the First Non-Profit campus Organization-Secretary
+                            <hr><li><b>High School: Turlock High/Central Catholic High School</b><br><i><span> Class of 2015</span></i><br>Speech and Debate Club, Key Club, Relay For Life, California Scholarship Federation member, Volunteer Tutor | Scholar Athlete: Track and Field, Cross Country, Water Polo, Tennis | <i>AP Scholar with Distinction </i></li>
+                        </ul>
+                    </li>
+                    <div class="projectDiv">
+                    <li class="Wtype2 content"><h2>Projects</h2>
+                        <ul>
+                            <li><b style="font-weight:600;">This website:</b> I self-learned HTML, CSS, and JavaScript including information from basic coding syntax and usage to responsive web design techniques, JQuery implementations, and styling techniques, then dove right into building this site from scratch. Utilizing Amazon Web Services for free hosting. Of course, I am always still learning and hope to edit and add to this page specifically throughout college.<br>
+                            </li>
+                            <li><hr><b style="font-weight:600;">2048 Graphical User Interface Game:</b> Designed and implemented in a CS course (CSE 8B). This was my very first <i>//presentable//</i> project. It was coded in Java, with a Graphical User Interface which made me able to showcase it to friends and family.
+                            </li>
+                        </ul>    
+                    </li>
+                    <img id="Gui" src="./Img/Gui.jpg" alt="Gemperle 2048"/>
+                    </div>
+                    <li id="work" class="Wtype1 content"><h2>Work</h2>
+                        <ul>
+                            <li><b style="font-weight:600;">Eggs Hawaii/Kalei Eggs/Hawaiian Maid Website Development</b><br><span><i>In progress; start date: Jul 28, 2016</i></span>
+                                <ul style="list-style: initial;"><li>Installed and am utilizing Wordpress while setting up domain and hosting for local egg company based in Hawaii. </li><hr>
+                                    <li>Using <b>Custom CSS and HTML</b> to make more personalized changes to Wordpress template.</li>
+                                </ul>
+                            </li>    
+                        </ul>
+                    </li>
+                    <li class="Wtype2 content"><h2>Courses and Concepts</h2>
+                        <ul>
+                            <p><b style="font-weight:600;">Computer Science:</b> Object-Oriented Programming ~ Data Structures ~ Discrete
+                            Mathematics ~ Algorithm Analysis and Time Complexity ~ Data Science Introduction<br><hr><b style="font-weight:600;">Mathematics:</b> Vector, Integral Calculus ~ Linear Algebra/MATLAB ~ Differential Equations (IP) ~ Mathematical Reasoning and Proof Structure</p>
+                        </ul>
+                    </li>
+
+                    </ul>
+                    </section> 
+            <footer id="foot">
+                <span><h2><b>Contact or Find out More</b></h2></span>
+                <div class="social">
+                    <div><a class="email" href="mailto:sarahgemp15@gmail.com"></a><p>sarahgemp15@gmail.com</p></div>
+                    <div><a class="facebook" href="https://www.facebook.com/sarah.gemperle.3" target="_blank"></a><p>Sarah Gemperle</p></div>
+                    <div><a class="linkedin" href="https://www.linkedin.com/in/sarah-gemperle-0a8" target="_blank"></a><p>Linked In</p></div>
+                </div>
+            </footer>
+            </div>
+      </main>
+      </body>
+</html>
+
